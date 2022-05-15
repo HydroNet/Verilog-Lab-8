@@ -1,0 +1,101 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;delay file
+    2 00000000                 GLOBAL           DELAY
+    3 00000000                 IMPORT           user_code2
+    4 00000000                 IMPORT           TOGGLE
+    5 00000000                 IMPORT           TOGGLE_ALL
+    6 00000000                 AREA             myCODE,CODE,READONLY
+    7 00000000         
+    8 00000000         DELAY
+    9 00000000 E8AD43F0        STMEA            SP!,{r4-r9,LR}
+   10 00000004 E10F1000        MRS              r1,CPSR     ;protects flags fro
+                                                            m "calling program"
+                                                            
+   11 00000008 E2500001 
+                       LOOP1   SUBS             r0,r0,#0x1  ;decrement loop
+   12 0000000C 1AFFFFFD        BNE              LOOP1
+   13 00000010 E128F001        MSR              CPSR_F,r1   ;restore flags
+   14 00000014 E93D83F0        LDMEA            SP!,{r4-r9,PC} ;loads values to
+                                                             protect
+   15 00000018 EAFFFFFE 
+                       STOP    B                STOP
+   16 0000001C                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\delaycode.d -o.\delayc
+ode.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Phil
+ips --predefine="__EVAL SETA 1" --list=.\delaycode.lst Delaycode.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DELAY 00000000
+
+Symbol: DELAY
+   Definitions
+      At line 8 in file Delaycode.s
+   Uses
+      At line 2 in file Delaycode.s
+Comment: DELAY used once
+LOOP1 00000008
+
+Symbol: LOOP1
+   Definitions
+      At line 11 in file Delaycode.s
+   Uses
+      At line 12 in file Delaycode.s
+Comment: LOOP1 used once
+STOP 00000018
+
+Symbol: STOP
+   Definitions
+      At line 15 in file Delaycode.s
+   Uses
+      At line 15 in file Delaycode.s
+Comment: STOP used once
+myCODE 00000000
+
+Symbol: myCODE
+   Definitions
+      At line 6 in file Delaycode.s
+   Uses
+      None
+Comment: myCODE unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+TOGGLE 00000000
+
+Symbol: TOGGLE
+   Definitions
+      At line 4 in file Delaycode.s
+   Uses
+      None
+Comment: TOGGLE unused
+TOGGLE_ALL 00000000
+
+Symbol: TOGGLE_ALL
+   Definitions
+      At line 5 in file Delaycode.s
+   Uses
+      None
+Comment: TOGGLE_ALL unused
+user_code2 00000000
+
+Symbol: user_code2
+   Definitions
+      At line 3 in file Delaycode.s
+   Uses
+      None
+Comment: user_code2 unused
+3 symbols
+338 symbols in table

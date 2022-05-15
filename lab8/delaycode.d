@@ -1,0 +1,1 @@
+.\delaycode.o: Delaycode.s

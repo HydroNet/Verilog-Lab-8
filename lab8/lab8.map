@@ -1,0 +1,132 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Lite]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(RESET) refers (Special) to toggle.o(myCODE) for TOGGLE
+    startup.o(RESET) refers (Special) to toggle_all.o(myCODE) for TOGGLE_ALL
+    startup.o(RESET) refers to taskoneandtwo.o(myCODE) for user_code2
+    delaycode.o(myCODE) refers (Special) to toggle.o(myCODE) for TOGGLE
+    delaycode.o(myCODE) refers (Special) to toggle_all.o(myCODE) for TOGGLE_ALL
+    delaycode.o(myCODE) refers (Special) to taskoneandtwo.o(myCODE) for user_code2
+    taskoneandtwo.o(myCODE) refers (Special) to delay_c.o(.text) for delay_C
+    taskoneandtwo.o(myCODE) refers to delaycode.o(myCODE) for DELAY
+    toggle.o(myCODE) refers to delaycode.o(myCODE) for DELAY
+    toggle_all.o(myCODE) refers to delay_c.o(.text) for delay_C
+    toggle_all.o(myCODE) refers to delaycode.o(myCODE) for DELAY
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    .text                                    0x00000000   Section        0  delay_c.o(.text)
+    Delaycode.s                              0x00000000   Number         0  delaycode.o ABSOLUTE
+    Startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    TaskOneAndTwo.s                          0x00000000   Number         0  taskoneandtwo.o ABSOLUTE
+    delay_C.c                                0x00000000   Number         0  delay_c.o ABSOLUTE
+    toggle.s                                 0x00000000   Number         0  toggle.o ABSOLUTE
+    toggle_all.s                             0x00000000   Number         0  toggle_all.o ABSOLUTE
+    RESET                                    0x00000014   Section      160  startup.o(RESET)
+    SWIHandler                               0x00000054   ARM Code       4  startup.o(RESET)
+    PAbtHandler                              0x00000058   ARM Code       4  startup.o(RESET)
+    DAbtHandler                              0x0000005c   ARM Code       4  startup.o(RESET)
+    IRQHandler                               0x00000060   ARM Code       4  startup.o(RESET)
+    FIQHandler                               0x00000064   ARM Code       4  startup.o(RESET)
+    UndefHandler                             0x00000068   ARM Code       4  startup.o(RESET)
+    myCODE                                   0x000000b4   Section       28  delaycode.o(myCODE)
+    myCODE                                   0x000000d0   Section      120  taskoneandtwo.o(myCODE)
+    myCODE                                   0x00000148   Section      164  toggle.o(myCODE)
+    myCODE                                   0x000001ec   Section      212  toggle_all.o(myCODE)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv1$ARM_ISAv4$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$REQ8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    delay_C                                  0x00000000   ARM Code      20  delay_c.o(.text)
+    Reset_Handler                            0x0000006c   ARM Code       0  startup.o(RESET)
+    DELAY                                    0x000000b4   ARM Code       0  delaycode.o(myCODE)
+    user_code2                               0x000000d0   ARM Code       0  taskoneandtwo.o(myCODE)
+    TOGGLE                                   0x00000148   ARM Code       0  toggle.o(myCODE)
+    TOGGLE_ALL                               0x000001ec   ARM Code       0  toggle_all.o(myCODE)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000000
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000002c0, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x000002c0, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000014   Code   RO           18  * .text               delay_c.o
+    0x00000014   0x000000a0   Code   RO            1  * RESET               startup.o
+    0x000000b4   0x0000001c   Code   RO            6    myCODE              delaycode.o
+    0x000000d0   0x00000078   Code   RO            9    myCODE              taskoneandtwo.o
+    0x00000148   0x000000a4   Code   RO           12    myCODE              toggle.o
+    0x000001ec   0x000000d4   Code   RO           15    myCODE              toggle_all.o
+
+
+    Execution Region ER_RW (Base: 0x40000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region ER_ZI (Base: 0x40000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        20          0          0          0          0       1838   delay_c.o
+        28          0          0          0          0        192   delaycode.o
+       160         48          0          0          0        256   startup.o
+       120         24          0          0          0        216   taskoneandtwo.o
+       164         16          0          0          0        212   toggle.o
+       212         20          0          0          0        232   toggle_all.o
+
+    ----------------------------------------------------------------------
+       704        108          0          0          0       2946   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+       704        108          0          0          0       2946   Grand Totals
+       704        108          0          0          0       2946   ELF Image Totals
+       704        108          0          0          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                  704 (   0.69kB)
+    Total RW  Size (RW Data + ZI Data)                 0 (   0.00kB)
+    Total ROM Size (Code + RO Data + RW Data)        704 (   0.69kB)
+
+==============================================================================
+

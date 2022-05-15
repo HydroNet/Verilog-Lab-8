@@ -1,0 +1,7 @@
+Dependencies for Project 'lab8', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x6246A9AF)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\Delaycode.s)(0x6246A8CA)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\delaycode.lst --xref -o .\delaycode.o --depend .\delaycode.d)
+F (.\TaskOneAndTwo.s)(0x6246A96C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\taskoneandtwo.lst --xref -o .\taskoneandtwo.o --depend .\taskoneandtwo.d)
+F (.\toggle.s)(0x6246A7FF)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\toggle.lst --xref -o .\toggle.o --depend .\toggle.d)
+F (.\toggle_all.s)(0x624F6E08)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\toggle_all.lst --xref -o .\toggle_all.o --depend .\toggle_all.d)
+F (.\delay_C.c)(0x6246A8E3)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\delay_c.o --omf_browse .\delay_c.crf --depend .\delay_c.d)

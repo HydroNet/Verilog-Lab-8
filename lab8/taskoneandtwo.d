@@ -1,0 +1,1 @@
+.\taskoneandtwo.o: TaskOneAndTwo.s
